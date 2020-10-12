@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol></defaultcontrol>
+	<onload condition="System.HasAddon(script.artistslideshow)">RunScript(script.artistslideshow)</onload>
+	<onload>ActivateWindow(MusicOSD)</onload>
+	<onunload>ClearProperty(PopupMenuVisible,Home)</onunload>
+	<controls>
+		<control type="image">
+			<visible>!System.HasAddon(script.artistslideshow)</visible>
+			<description>fanart</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<include>ScreenWidth</include>
+			<height>960</height>
+			<texture background="true">$INFO[Player.Art(fanart)]</texture>
+			<aspectratio>scale</aspectratio>
+			<fadetime>FanartCrossfadeTime</fadetime>
+		</control>
+        <control type="group">
+            <visible>System.HasAddon(script.artistslideshow)</visible>
+            <control type="group">
+                <visible>String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
+                <animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+                <control type="image">
+                    <aspectratio>scale</aspectratio>
+                    <fadetime>400</fadetime>
+                    <texture background="true">$INFO[Player.Art(fanart)]</texture>
+                </control>
+                <control type="visualisation" id="2">
+                    <description>visualisation</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <include>ScreenWidth</include>
+                    <height>960</height>
+                </control>
+            </control>
+            <control type="image">
+                <visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.Image))</visible>
+                <aspectratio>scale</aspectratio>
+                <fadetime>400</fadetime>
+                <animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+                <texture background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow.Image)]</texture>
+            </control>
+            <control type="multiimage">
+                <visible>!String.IsEmpty(Window(Visualisation).Property(ArtistSlideshow.ArtworkReady))</visible>
+                <top>0</top>
+                <left>0</left>
+				<include>ScreenWidth</include>
+				<height>960</height>
+                <aspectratio>scale</aspectratio>
+                <timeperimage>10000</timeperimage>
+                <randomize>true</randomize>
+                <fadetime>600</fadetime>
+                <loop>yes</loop>
+                <imagepath background="true">$INFO[Window(Visualisation).Property(ArtistSlideshow)]</imagepath>
+            </control>
+        </control>
+	</controls>
+</window>

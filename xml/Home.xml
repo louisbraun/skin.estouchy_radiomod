@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window>
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="label">
+			<posx>-10</posx>
+			<posy>-10</posy>
+			<width>0</width>
+			<height>0</height>
+			<label>$INFO[Weather.FanartCode]</label> <!-- trigger weather retrieval -->
+		</control>
+		<include>CommonBackground</include>
+		<!-- control buttons -->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="-1040,0" time="400" tween="quadratic" easing="in">WindowClose</animation>
+			<animation effect="slide" end="0,0" start="-1040,0" time="400" tween="quadratic" easing="out">WindowOpen</animation>
+			<control type="image">
+				<posx>-5</posx>
+				<posy>70</posy>
+				<width>120</width>
+				<height>900</height>
+				<texture>panel.png</texture>
+				<bordertexture border="6">panel_shadow.png</bordertexture>
+				<bordersize>5</bordersize>
+			</control>
+			<control type="panel" id="9002">
+				<posx>0</posx>
+				<posy>70</posy>
+				<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(Home)">WindowClose</animation>
+				<animation effect="fade" end="100" start="0" time="300" condition="Window.Previous(Home)">WindowOpen</animation>
+				<animation effect="slide" start="0,0" end="60,0" time="0" condition="String.IsEqual(Container(9002).NumItems,3)">conditional</animation>
+				<width>100</width>
+				<height>500</height>
+				<onleft>9002</onleft>
+				<onright>9002</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<pagecontrol></pagecontrol>
+				<scrolltime>300</scrolltime>
+				<orientation>Vertical</orientation>
+				<itemlayout height="120" width="120">
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>80</width>
+						<height>80</height>
+						<bordersize>12</bordersize>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="120" width="120">
+					<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>120</width>
+						<height>120</height>
+						<texture colordiffuse="blue">roundbutton-focus.png</texture>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>80</width>
+						<height>80</height>
+						<bordersize>12</bordersize>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<aspectratio>keep</aspectratio>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<label>13012</label>
+						<onclick>PlayerControl(stop)</onclick>
+						<onclick>ActivateScreensaver</onclick>
+						<icon>icon_button_shutdown.png</icon>
+					</item>
+					<item>
+						<label>5</label>
+						<onclick>ActivateWindow(Settings)</onclick>
+						<icon>icon_button_settings.png</icon>
+					</item>
+				</content>
+			</control>
+		</control>
+		<!--Main Menu -->
+		<control type="panel" id="9000">
+			<include>Window_OpenClose_Animation_Zoom</include>
+			<posx>160</posx>
+			<posy>100</posy>
+			<width>1500</width>
+			<height>750</height>
+			<onleft>9002</onleft>
+			<onright>9002</onright>
+			<onup>9002</onup>
+			<ondown>9000</ondown>
+			<scrolltime>300</scrolltime>
+			<itemlayout height="250" width="500">
+				<control type="image">
+					<posx>20</posx>
+					<posy>20</posy>
+					<width>360</width>
+					<height>210</height>
+					<texture>button_nofocus.png</texture>
+				</control>
+				<control type="image">
+					<posx>15</posx>
+					<posy>175</posy>
+					<width>370</width>
+					<height>60</height>
+					<texture colordiffuse="40000000">black.png</texture>
+					<bordertexture border="6">panel_shadow.png</bordertexture>
+					<bordersize>5</bordersize>
+				</control>
+				<control type="image">
+					<posx>20</posx>
+					<posy>20</posy>
+					<width>360</width>
+					<height>160</height>
+					<texture>$INFO[ListItem.Icon]</texture>
+					<align>center</align>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<posx>0</posx>
+					<posy>190</posy>
+					<width>400</width>
+					<height>400</height>
+					<label>$INFO[ListItem.Label]</label>
+					<font>font28_title</font>
+					<align>center</align>
+					<textcolor>white</textcolor>
+				</control>
+			</itemlayout>
+			<focusedlayout height="250" width="500">
+				<control type="group">
+					<animation type="Focus" reversible="false">
+						<effect type="zoom" center="auto" start="100" end="108" time="250" tween="sine" />
+					</animation>
+					<animation type="UnFocus" reversible="false">
+						<effect type="zoom" center="auto" start="108" end="100" time="250" tween="sine" />
+					</animation>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>360</width>
+						<height>210</height>
+						<texture>button_nofocus.png</texture>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>360</width>
+						<height>210</height>
+						<texture>list_focus.png</texture>
+						<animation effect="fade" start="100" end="0" time="0">Unfocus</animation>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>180</posy>
+						<width>360</width>
+						<height>50</height>
+						<texture colordiffuse="40000000">black.png</texture>
+					</control>
+					<control type="image">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>360</width>
+						<height>160</height>
+						<texture>$INFO[ListItem.Icon]</texture>
+						<align>center</align>
+						<aspectratio>keep</aspectratio>
+					</control>
+					<control type="label">
+						<posx>0</posx>
+						<posy>190</posy>
+						<width>400</width>
+						<height>400</height>
+						<label>$INFO[ListItem.Label]</label>
+						<font>font28_title</font>
+						<align>center</align>
+					</control>
+				</control>
+			</focusedlayout>
+			<content>
+				<item id="1">
+					<label>Webradio</label>
+					<onclick>RunAddon(plugin.audio.radio_de_mod)</onclick>
+					<icon>radio.png</icon>
+				</item>
+				<item id="2">
+					<label>Musik</label>
+					<onclick>ActivateWindow(Music,musicdb://artists/,return)</onclick>
+					<icon>music.png</icon>
+				</item>
+				<item id="3">
+					<label>Fernsehen</label>
+					<onclick>ActivateWindow(TVChannels)</onclick>
+					<icon>television.png</icon>
+				</item>
+				<item id="4">
+					<label>Musikvideos</label>
+					<onclick>ActivateWindow(Videos,videodb://musicvideos/titles/,return)</onclick>
+					<icon>musicvideos.png</icon>
+				</item>
+				<item id="5">
+					<label>Filme</label>
+					<onclick>ActivateWindow(Videos,videodb://movies/titles/,return)</onclick>
+					<icon>movies.png</icon>
+				</item>
+				<item id="6">
+					<label>Netflix</label>
+					<onclick>RunAddon(plugin.video.netflix)</onclick>
+					<icon>netflix.png</icon>
+				</item>
+				<item id="7">
+					<label>Youtube</label>
+					<onclick>RunAddon(plugin.video.youtube)</onclick>
+					<icon>youtube.png</icon>
+				</item>
+				<item id="8">
+					<label>Wetter</label>
+					<onclick>ActivateWindow(Weather)</onclick>
+					<icon>weather.png</icon>
+				</item>
+			</content>
+		</control>
+		<include>Header</include>
+		<include>Footer</include>
+	</controls>
+</window>

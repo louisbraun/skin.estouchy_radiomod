@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<window type="dialog" id="1113">
+  <allowoverlay>no</allowoverlay>
+  <onload condition="!Window.IsActive(visualisation)">FullScreen</onload>
+  <visible>Player.HasAudio + Integer.IsGreater(MusicPlayer.Time,0) + Integer.IsLess(MusicPlayer.Time,2)</visible>
+  <controls></controls>
+</window> 
