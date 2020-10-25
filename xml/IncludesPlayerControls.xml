@@ -56,12 +56,7 @@
 			<posy>10</posy>
 			<include>VisibleFadeEffect</include>
 			<include>16x9_xPos_Relocation</include>
-			<visible>! [Window.IsVisible(busydialog) |
-			            Window.IsVisible(extendedprogressdialog) | 
-			            Window.IsVisible(Notification) | 
-			            Window.IsVisible(volumebar) |
-			            String.Contains(Player.Folderpath,plugin.audio.radio) |
-			            Pvr.IsPlayingTV]
+			<visible>! [String.Contains(Player.Folderpath,plugin.audio.radio) | Pvr.IsPlayingTV ]
 			</visible>
 			<control type="button">
 				<description>Volume Button</description>

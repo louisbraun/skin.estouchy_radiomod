@@ -340,22 +340,22 @@
 					<posx>5</posx>
 					<posy>5</posy>
 					<width>298</width>
-					<height>168</height>
+					<height>138</height>
 					<aspectratio>scale</aspectratio>
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 				</control>
 				<control type="image">
 					<posx>5</posx>
-					<posy>173</posy>
+					<posy>143</posy>
 					<width>298</width>
-					<height>45</height>
+					<height>75</height>
 					<texture colordiffuse="40000000">black.png</texture>
 				</control>
 				<control type="textbox">
 					<posx>5</posx>
-					<posy>167</posy>
+					<posy>137</posy>
 					<width>298</width>
-					<height>52</height>
+					<height>82</height>
 					<font>font20_narrow</font>
 					<selectedcolor>selected</selectedcolor>
 					<align>center</align>
@@ -401,22 +401,22 @@
 					<posx>5</posx>
 					<posy>5</posy>
 					<width>298</width>
-					<height>168</height>
+					<height>138</height>
 					<aspectratio>scale</aspectratio>
 					<texture background="true">$INFO[Listitem.Icon]</texture>
 				</control>
 				<control type="image">
 					<posx>5</posx>
-					<posy>173</posy>
+					<posy>143</posy>
 					<width>298</width>
-					<height>45</height>
+					<height>75</height>
 					<texture colordiffuse="blue">white.png</texture>
 				</control>
 				<control type="textbox">
 					<posx>5</posx>
-					<posy>167</posy>
+					<posy>137</posy>
 					<width>298</width>
-					<height>52</height>
+					<height>82</height>
 					<font>font20_narrow</font>
 					<selectedcolor>selected</selectedcolor>
 					<align>center</align>

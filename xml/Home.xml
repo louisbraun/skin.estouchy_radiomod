@@ -184,7 +184,7 @@
 			<content>
 				<item id="1">
 					<label>Webradio</label>
-					<onclick>RunAddon(plugin.audio.radio_de_mod)</onclick>
+					<onclick>RunAddon(plugin.audio.radio_de_radiomod)</onclick>
 					<icon>radio.png</icon>
 				</item>
 				<item id="2">

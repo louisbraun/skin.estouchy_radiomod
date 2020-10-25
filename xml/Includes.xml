@@ -1723,22 +1723,22 @@
 					<icon>icon_settings_system.png</icon>
 				</item>
 				<item id="7">
-					<label>15016</label>
-					<label2>35100</label2>
-					<onclick>ActivateWindow(GameSettings)</onclick>
-					<icon>icon_settings_games.png</icon>
-				</item>
-				<item id="8">
 					<label>24001</label>
 					<label2>31407</label2>
 					<onclick>ActivateWindow(AddonBrowser)</onclick>
 					<icon>icon_settings_addons.png</icon>
 				</item>
-				<item id="9">
+				<item id="8">
 					<label>13200</label>
 					<label2>31411</label2>
 					<onclick>ActivateWindow(Profiles)</onclick>
 					<icon>icon_settings_profiles.png</icon>
+				</item>
+				<item id="9">
+					<label>Kodi Beenden</label>
+					<label2>Kodi Beenden</label2>
+					<onclick>Quit</onclick>
+					<icon>icon_settings_shutdown.png</icon>
 				</item>
 			</content>
 		</control>
